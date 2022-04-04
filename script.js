@@ -5,7 +5,7 @@ const renderContacts = (data) => {
         `
         <div id="${item.id}" class="card_contact">
             <h4 class="item_name">${item.name}</h4>
-            <p class="addstar"><i class="fa-regular fa-star add" onclick="addStar(${index})" id="${item.id}"></i></p>
+            <p class="addstar"><i class="fa-regular fa-star add" onclick="addStar(${item.id})" id="${item.id}"></i></p>
             <p class="item_username"></p> 
             <p class="item_number">${item.phone}</p>
         </div>
@@ -60,22 +60,17 @@ getData().then(data =>
                 element.username
                 .toLowerCase().trim() != userSearch.toLowerCase().trim()
                 ){  
-                    console.log('nessun contatto'); /* ?????? */
-                    let risposta = document.getElementById('contact_list')
-                    risposta.innerHTML = 'fdbvnieubfnrivjernbiuernbiuernbuierubeirubnieurnbieur';
+                    const risposta = document.getElementById('contact_list');
+                    risposta.innerHTML = '<div class="null"> Nessun contatto</div>';
+                    risposta.style.background = "transparent";
+
             }
-            
+            return risposta
     });
 
     renderContacts(filteredList);
 
-    // aggiungo stella solid a contatto
+    //aggiungo stella solid
 
-    document.querySelector('.add').addEventListener('click', addStar);
-
-    function addStar(index) {
-        var element = document.querySelector('.add');
-        element.classList.add("fa-solid");
-    }
-    
+    // document.querySelector('.add').addEventListener('click')
 }));
