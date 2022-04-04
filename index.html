@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AddressBook</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/083a5ea5b9.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -14,14 +20,22 @@
     </header>
     <section>
         <div class="search_input">
-            <input type="text" id="search" placeholder="">
+            <form>
+                <input type="text" id="search" placeholder="ricerca contatto">
+            </form>
         </div>
 
+        <h3>Contatti</h3> <h3 class="star">Preferiti</h3>
         <div class="contact_list"></div>
 
 
 
     </section>
+    <div class="menu">
+        <i class="fa-regular fa-star --fa-primary-color fa-2xl"></i>
+        <i class="fa-solid fa-address-book --fa-secondary-color fa-2xl"></i>
+        <i class="fa-solid fa-plus --fa-primary-color fa-2xl"></i>
+    </div>
     
 
 
