@@ -1,0 +1,25 @@
+/* body {
+    
+} */
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #FEFEFE;
+}
+
+input#search {
+    all: unset;
+    border: 1px solid rgb(146, 146, 146);
+    line-height: 1.5rem;
+    border-radius: 1rem;
+}
+
+input#search:focus {border: 1px solid #000000};
+
+div.search_input {
+    display: flex;
+    justify-content: center;
+    background-color: #FEFEFE;
+}
+
