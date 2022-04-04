@@ -1,7 +1,9 @@
 // stampo card contatto
 const renderContacts = (data) => {
-
-    const contacts = data.map((item, index) => 
+    console.log(data)
+        let contacts = [];
+        if(data.length > 0) {
+        contacts = data.map((item, index) => 
         `
         <div id="${item.id}" class="card_contact">
             <h4 class="item_name">${item.name}</h4>
@@ -11,12 +13,17 @@ const renderContacts = (data) => {
         </div>
         <div class="separate"></div>
         `
-    
     );
-
+    } else {
+        contacts = [
+            `
+            <div id="" class="nulla">
+                <p>800A</p>
+            </div>
+            `
+        ]
+    }
     document.querySelector('.contact_list').innerHTML = contacts.join('');
-
-    
 
 }
 
@@ -38,8 +45,8 @@ getData().then(data =>
     // filtro le card
     document.querySelector('#search').addEventListener('keyup', () => {
     const userSearch = document.querySelector('#search').value;
-    
-    let filteredList = data.filter((element) => {
+    let filteredList  = [];
+        filteredList = data.filter((element) => {
             if (element.name
                 .toLowerCase().trim().includes(userSearch.toLowerCase().trim()) ||
                 
@@ -50,22 +57,8 @@ getData().then(data =>
                 .toLowerCase().trim().includes(userSearch.toLowerCase().trim())
                 ){
                 return element
-            } else if (
-                element.name
-                .toLowerCase().trim() != userSearch.toLowerCase().trim() ||
-
-                element.email
-                .toLowerCase().trim() != userSearch.toLowerCase().trim() ||
-
-                element.username
-                .toLowerCase().trim() != userSearch.toLowerCase().trim()
-                ){  
-                    const risposta = document.getElementById('contact_list');
-                    risposta.innerHTML = '<div class="null"> Nessun contatto</div>';
-                    risposta.style.background = "transparent";
-
-            }
-            return risposta
+            } 
+            
     });
 
     renderContacts(filteredList);

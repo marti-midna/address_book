@@ -138,8 +138,9 @@ h3.star {
 
 /* - - - - - -*/
 
-.null {
+.nulla {
     color: rgba(109, 109, 109, 0.735);
     text-align: center;
     padding-top: 2rem;
+    background-color: transparent;
 }
