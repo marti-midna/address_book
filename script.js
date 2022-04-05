@@ -5,7 +5,8 @@ const renderContacts = (data) => {
         if(data.length > 0) {
         contacts = data.map((item, index) => 
         `
-        <div id="${item.id}" class="card_contact">
+        <div id="${item.id}" class="card_contact normal">
+            <img class="item_img">
             <h4 class="item_name">${item.name}</h4>
             <p class="addstar"><i class="fa-regular fa-star add" onclick="addStar()" id="${item.id}"></i></p>
             <p class="item_username"></p> 
@@ -13,8 +14,10 @@ const renderContacts = (data) => {
         </div>
         <div class="separate"></div>
         `
+        
     );
     } else {
+        
         contacts = [
             `
             <div id="" class="nulla">
@@ -22,23 +25,35 @@ const renderContacts = (data) => {
             </div>
             `
         ]
+        
     }
     document.querySelector('.contact_list').innerHTML = contacts.join('');
 
+    //creo array preferiti-------------------------
+    
+
+    
     
 }
 
 
 
- //aggiungo stella solid
+//aggiungo stella solid a contatto
  function addStar() {
     let elements = document.querySelectorAll('.add');
     elements.forEach(element => {
-        element.addEventListener('click', () => element.classList.toggle('fa-solid'))
+        element.addEventListener('click', () => element.classList.toggle('fa-solid'),
+        )
+        
     });
-   
-    
+
 }
+
+    
+
+
+
+
 
 
 //chiamata tramite API
