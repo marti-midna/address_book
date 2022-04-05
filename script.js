@@ -2,19 +2,22 @@
 const renderContacts = (data) => {
     console.log(data)
         let contacts = [];
+        let newData = data;
         if(data.length > 0) {
         contacts = data.map((item, index) => 
-        `
+        {   console.log(newData)
+            str = `
         <div id="${item.id}" class="card_contact normal">
             <img class="item_img">
-            <h4 class="item_name">${item.name}</h4>
+            <h4 class="item_name">${item.name}</h4> 
             <p class="addstar"><i class="fa-regular fa-star add ${item.favorite ? 'fa-solid' : ''}" id="${item.id}"></i></p>
             <p class="item_username"></p> 
             <p class="item_number">${item.phone}</p>
         </div>
         <div class="separate"></div>
-        `
-        
+        `;
+            return str
+        }
     );
     } else {
         
@@ -29,34 +32,26 @@ const renderContacts = (data) => {
     }
     document.querySelector('.contact_list').innerHTML = contacts.join('');
 
-    const stars = document.querySelectorAll('.add');
-    console.log(stars);
-    stars.forEach(star => star.addEventListener("click", ()=> {
-    const id = parseInt(star.id);
-    const index = data.findIndex(item => item.id === id)
-    console.log(data[index]);
-    data[index].favorite = true;
-    
-    // document.querySelector('.contact_list').innerHTML = renderContacts(data[index]);
-}));
-
-
-    
-    
+    document.querySelectorAll('.add').forEach((element, index) => {
+        element.addEventListener('click', () =>{
+        console.log(index, data);
+        
+        const newData = data.map((element) => {
+            if(element.id === index+1){
+               return {...element, favorite: !element.favorite}; 
+            } else {
+                return element
+            }
+            
+        });
+        renderContacts(newData);
+        })
+        
+    }) 
 }
 
 
 
-//aggiungo stella solid a contatto
-//  function addStar() {
-//     let elements = document.querySelectorAll('.add');
-//     elements.forEach(element => {
-//         element.addEventListener('click', () => element.classList.toggle('fa-solid'),
-//         )
-        
-//     });
-
-// }
 
 
 
