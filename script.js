@@ -7,7 +7,7 @@ const renderContacts = (data) => {
         `
         <div id="${item.id}" class="card_contact">
             <h4 class="item_name">${item.name}</h4>
-            <p class="addstar"><i class="fa-regular fa-star add" onclick="addStar(${item.id})" id="${item.id}"></i></p>
+            <p class="addstar"><i class="fa-regular fa-star add" onclick="addStar()" id="${item.id}"></i></p>
             <p class="item_username"></p> 
             <p class="item_number">${item.phone}</p>
         </div>
@@ -18,13 +18,26 @@ const renderContacts = (data) => {
         contacts = [
             `
             <div id="" class="nulla">
-                <p>800A</p>
+                <p>Nessun Contatto</p>
             </div>
             `
         ]
     }
     document.querySelector('.contact_list').innerHTML = contacts.join('');
 
+    
+}
+
+
+
+ //aggiungo stella solid
+ function addStar() {
+    let elements = document.querySelectorAll('.add');
+    elements.forEach(element => {
+        element.addEventListener('click', () => element.classList.toggle('fa-solid'))
+    });
+   
+    
 }
 
 
@@ -62,8 +75,14 @@ getData().then(data =>
     });
 
     renderContacts(filteredList);
+    
+    
+    
 
-    //aggiungo stella solid
 
-    // document.querySelector('.add').addEventListener('click')
+
+
+
+
 }));
+
