@@ -8,11 +8,20 @@ const renderContacts = (data) => {
         {   
             str = `
         <div id="${item.id}" class="card_contact normal">
-            <img class="item_img">
-            <h4 class="item_name">${item.name}</h4> <p class="item_username">${item.username}</p>
-            <p class="addstar"><i class="fa-regular fa-star add ${item.favorite ? 'fa-solid' : ''}" id="${item.id}"></i></p>
-            <p class="item_username"></p> 
-            <p class="item_number">${item.phone}</p>
+            <div class="credenziali">
+                <div class="img_container">
+                    <img class="item_img">
+                </div>
+                <div class="user_container">
+                    <h4 class="item_name">${item.name}</h4> <p class="item_username">${item.username}</p>
+                    <p class="item_number">${item.phone}</p>
+                </div>
+            </div>
+
+            <div class="addstar">
+                <i class="fa-regular fa-star add ${item.favorite ? 'fa-solid' : ''}" id="${item.id}"></i>
+            </div> 
+            
         </div>
         <div class="separate"></div>
         `;

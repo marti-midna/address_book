@@ -4,15 +4,21 @@
     box-sizing: border-box;
 }
 
-body {
+.container {
     background-color: #f1f1f1;
     font-family: 'Poppins', sans-serif;
     color: #0D0F26;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    
 }
 
 h1 {
     
-    padding: 1rem;
+    padding: 10px;
     font-size: 1.4rem;
     text-align: center;
     
@@ -24,6 +30,10 @@ form {
     justify-content: center;
 }
 
+.search_input {
+    padding: 10px;
+}
+
 input#search {
     all: unset;
     font-size: 0.8rem;
@@ -31,7 +41,6 @@ input#search {
     line-height: 1.5rem;
     border-radius: 1rem;
     padding-left: 2.5rem;
-    margin: 1rem;
     background-color: white;
     font-weight: 400;
     background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 9px;
@@ -47,23 +56,36 @@ div.search_input {
 
 /* - - - - - - - - */
 
+.headings_container {
+    display: flex;
+    justify-content: start;
+    padding: 10px 0px;
+}
+
 h3 {
     padding-left: 1rem ;
     font-size: 0.8rem;
-    display: inline;
+    
 }
 
 h3.star {
     color: rgb(130, 130, 130);
-    display: inline;
+    
 }
 
-.contact_list {
- background-color: white;
- width: 100%;
- height: 100%;
- border-radius: 1rem;
+.contacts_container {
+    border-radius: 1rem;  
+    background-color: white;
+    height: 70%;
+    width: 100%;
+    overflow: auto;
+}
 
+.contacts_container .contatti{
+ 
+ 
+ /* height: calc(100% - 70px); */
+ 
 }
 
 .tabcontent {
@@ -80,25 +102,42 @@ h3.star {
 
 /* C A R D */
 .card_contact{
-    padding: 1rem;
-    position: relative;
-    z-index: 90;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.item_img {
-    width: 40px;
-    height: 40px;
-    border-radius: 4rem;
-    position: absolute;
-    display: inline-block;
-    top: 20px;
-    background-image: url('/img/circle-user-solid.svg');
+.credenziali {
+    display: flex;
+    width: 70%;
+}
 
+.img_container {
+    width: 10%;
+}
+
+
+.item_img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem;
+    /* position: absolute; */
+    /* display: inline-block; */
+    /* top: 20px; */
+    background-image: url('/img/circle-user-solid.svg');
+    background-repeat: no-repeat;
+    /* background-size: ; */
+    object-fit: cover;
 }
 
 .item_name {
-    display: inline;
-    padding-left: 17%;
+    width: 100%;
+}
+
+.user_container {
+    width: 70%;
+    padding-left: 1rem;
 }
 
 .item_username::before {
@@ -107,11 +146,11 @@ h3.star {
 
 }
 
-.addstar {
-    position: absolute;
-    top: 15px;
-    right: 16px;
-    z-index: 99;
+ .addstar { 
+    width: 30%;
+    justify-content: end;
+    display: flex;
+    padding: 1.5rem;
 }
 
 .item_username {
@@ -119,12 +158,12 @@ h3.star {
     font-style: italic;
     color: #4f4f4f;
     font-size: 80%;
-    padding-left: 17%;
+
     
 }
 .item_number {
     color: #4f4f4f;
-    padding-left: 17%;
+
 }
 .separate{
     margin: 0 auto;
@@ -135,29 +174,29 @@ h3.star {
 
 /* C A R D E F F E C T */
 
-.cardeffect {
-    background-color: rgba(0, 0, 0, 0.914);
-    z-index: 100;
-    position: fixed;
+/* .cardeffect {
+    background-color: rgba(0, 0, 0, 0.914); */
+    /* z-index: 100; */
+    /* position: fixed;
     width: 100vw;
     height: 100vh;
     transition: all 0.25s ease-in-out;
 
-}
+} */
 
 /* M E N U */
 .tab {
-    position: fixed;
-    top: 689px;
+    /* position: fixed;
+    top: 689px; */
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 5px 1px #aeaeae;
     width: 100%;
-    height: 4rem;
     border-radius: 3rem 3rem 0rem 0rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 200;
+    padding: 1.3rem;
+    /* z-index: 200; */
 }
 
 .tab button {

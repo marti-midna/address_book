@@ -15,47 +15,49 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <h1>Address Book</h1>
-    </header>
-    <section>
-        <div class="search_input">
-            <form>
-                <input type="text" id="search" placeholder="ricerca contatto">
-            </form>
-        </div>
-
-        <h3>Contatti</h3> <h3 class="star">Preferiti</h3>
-
-
+    <div class="container">
+        <header>
+            <h1>Address Book</h1>
+    
+            <div class="search_input">
+                <form>
+                    <input type="text" id="search" placeholder="ricerca contatto">
+                </form>
+            </div>
+            <div class="headings_container">
+                <h3>Contatti</h3> <h3 class="star">Preferiti</h3>
+            </div>
+        </header>
         
-        <div class="contact_list tabcontent" id="Contatti">
+        <section class="contacts_container">
+            
+            <div class="contact_list tabcontent contatti" id="Contatti">
+            </div>
+    
+            <div class="contact_list tabcontent" id="Preferiti">
+            </div>
+    
+            <div class="contact_list tabcontent" id="Aggiungi">
+            </div>
+            
+    
+        </section>
+    
+        <div class="tab">
+            <button class="tablinks" onclick="openSection(event, 'Preferiti')">
+                <i class="fa-solid fa-star --fa-primary-color fa-2xl preferiti"></i>
+            </button>
+    
+            <button class="tablinks" onclick="openSection(event, 'Contatti')" id="defaultOpen">
+                <i class="fa-solid fa-address-book --fa-secondary-color fa-2xl"></i>
+            </button>
+    
+            <button class="tablinks" onclick="openSection(event, 'Aggiungi')">
+                <i class="fa-solid fa-plus --fa-primary-color fa-2xl"></i>
+            </button>
         </div>
-
-        <div class="contact_list tabcontent" id="Preferiti">
-        </div>
-        
-        <div class="contact_list tabcontent" id="Aggiungi">
-        </div>
-        
-
-
-
-    </section>
-
-    <div class="tab">
-        <button class="tablinks" onclick="openSection(event, 'Preferiti')">
-            <i class="fa-solid fa-star --fa-primary-color fa-2xl preferiti"></i>
-        </button>
-
-        <button class="tablinks" onclick="openSection(event, 'Contatti')" id="defaultOpen">
-            <i class="fa-solid fa-address-book --fa-secondary-color fa-2xl"></i>
-        </button>
-
-        <button class="tablinks" onclick="openSection(event, 'Aggiungi')">
-            <i class="fa-solid fa-plus --fa-primary-color fa-2xl"></i>
-        </button>
     </div>
+   
     
 
 
