@@ -26,17 +26,35 @@
         </div>
 
         <h3>Contatti</h3> <h3 class="star">Preferiti</h3>
-        <div class="contact_list">
-            
+
+
+        
+        <div class="contact_list tabcontent" id="Contatti">
         </div>
+
+        <div class="contact_list tabcontent" id="Preferiti">
+        </div>
+        
+        <div class="contact_list tabcontent" id="Aggiungi">
+        </div>
+        
 
 
 
     </section>
-    <div class="menu">
-        <i class="fa-solid fa-star --fa-primary-color fa-2xl preferiti"></i>
-        <i class="fa-solid fa-address-book --fa-secondary-color fa-2xl"></i>
-        <i class="fa-solid fa-plus --fa-primary-color fa-2xl"></i>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openSection(event, 'Preferiti')">
+            <i class="fa-solid fa-star --fa-primary-color fa-2xl preferiti"></i>
+        </button>
+
+        <button class="tablinks" onclick="openSection(event, 'Contatti')" id="defaultOpen">
+            <i class="fa-solid fa-address-book --fa-secondary-color fa-2xl"></i>
+        </button>
+
+        <button class="tablinks" onclick="openSection(event, 'Aggiungi')">
+            <i class="fa-solid fa-plus --fa-primary-color fa-2xl"></i>
+        </button>
     </div>
     
 

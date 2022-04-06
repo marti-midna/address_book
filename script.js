@@ -1,15 +1,15 @@
 // stampo card contatto
+let contacts = [];
+
 const renderContacts = (data) => {
-    console.log(data)
-        let contacts = [];
-        let newData = data;
+        
         if(data.length > 0) {
         contacts = data.map((item, index) => 
-        {   console.log(newData)
+        {   
             str = `
         <div id="${item.id}" class="card_contact normal">
             <img class="item_img">
-            <h4 class="item_name">${item.name}</h4> 
+            <h4 class="item_name">${item.name}</h4> <p class="item_username">${item.username}</p>
             <p class="addstar"><i class="fa-regular fa-star add ${item.favorite ? 'fa-solid' : ''}" id="${item.id}"></i></p>
             <p class="item_username"></p> 
             <p class="item_number">${item.phone}</p>
@@ -34,7 +34,7 @@ const renderContacts = (data) => {
 
     document.querySelectorAll('.add').forEach((element, index) => {
         element.addEventListener('click', () =>{
-        console.log(index, data);
+
         
         const newData = data.map((element) => {
             if(element.id === index+1){
@@ -48,7 +48,54 @@ const renderContacts = (data) => {
         })
         
     }) 
+
+    /* START SEZIONE PREFERITI */
+    // FavoriteList = [];
+    let FavoriteList = data.filter(function (el) {
+        return el.favorite === true;
+    });
+
+    console.log(FavoriteList);
+    // document.getElementById('Preferiti').innerHTML = FavoriteList.join('');
+    // renderContacts(FavoriteList);
+
+    
 }
+
+
+
+
+
+
+
+
+//sezione contatti aperta di default
+document.getElementById("defaultOpen").click();
+
+
+/* MOSTRA SEZIONI INTERESSATE*/
+function openSection(event, nomeSezione) {
+
+    let i, tabcontent, tablinks;
+
+    //nascondi tutti gli elementi con class tabcontent
+    tabcontent = document.getElementsByClassName('tabcontent');
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].getElementsByClassName.display = 'none';
+    }
+
+    //rimuovo la classe active
+    tablinks = document.getElementsByClassName('tablinks');
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace('active', '')
+    }
+
+    //aggiungi classe active alla sezione mostrata dopo aver cliccato
+    document.getElementById(nomeSezione).style.display = "block";
+    event.currentTarget.className += "active";
+
+}
+/* END MOSTRA SEZIONI INTERESSATE*/
 
 
 

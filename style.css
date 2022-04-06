@@ -66,6 +66,15 @@ h3.star {
 
 }
 
+.tabcontent {
+    display: none;
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
 
 
@@ -99,10 +108,9 @@ h3.star {
 }
 
 .addstar {
-    display: inline;
     position: absolute;
     top: 15px;
-    right: 36px;
+    right: 16px;
     z-index: 99;
 }
 
@@ -111,6 +119,7 @@ h3.star {
     font-style: italic;
     color: #4f4f4f;
     font-size: 80%;
+    padding-left: 17%;
     
 }
 .item_number {
@@ -137,7 +146,7 @@ h3.star {
 }
 
 /* M E N U */
-.menu {
+.tab {
     position: fixed;
     top: 689px;
     background-color: rgb(255, 255, 255);
@@ -149,6 +158,18 @@ h3.star {
     justify-content: space-around;
     align-items: center;
     z-index: 200;
+}
+
+.tab button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button.active {
+    background-color: #ccc;
 }
 
 .fa-solid {
