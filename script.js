@@ -1,6 +1,6 @@
 // stampo card contatto
 let contacts = [];
-
+let favorites = [];
 const renderContacts = (data) => {
         
         if(data.length > 0) {
@@ -41,6 +41,53 @@ const renderContacts = (data) => {
     }
     document.querySelector('.contact_list').innerHTML = contacts.join('');
 
+    /* START SEZIONE PREFERITI */
+    // FavoriteList = [];
+    favorites = data.filter(function (el) {
+        return el.favorite === true;
+    });
+
+    console.log(favorites);
+    // document.getElementById('Preferiti').innerHTML = FavoriteList.join('');
+    // renderContacts(FavoriteList);
+
+    if(favorites.length > 0) {
+        favorites = favorites.map((item, index) => 
+        {   
+            str = `
+        <div id="${item.id}" class="card_contact normal">
+            <div class="credenziali">
+                <div class="img_container">
+                    <img class="item_img">
+                </div>
+                <div class="user_container">
+                    <h4 class="item_name">${item.name}</h4> <p class="item_username">${item.username}</p>
+                    <p class="item_number">${item.phone}</p>
+                </div>
+            </div>
+
+            <div class="addstar">
+                <i class="fa-regular fa-star add ${item.favorite ? 'fa-solid' : ''}" id="${item.id}"></i>
+            </div> 
+            
+        </div>
+        <div class="separate"></div>
+        `;
+            return str
+        }
+    );
+    } else {
+        
+        favorites = [
+            `
+            <div id="" class="nulla">
+                <p>Nessun Contatto</p>
+            </div>
+            `
+        ]
+        
+    }
+    document.getElementById('Preferiti').innerHTML = favorites.join('');
     document.querySelectorAll('.add').forEach((element, index) => {
         element.addEventListener('click', () =>{
 
@@ -58,17 +105,6 @@ const renderContacts = (data) => {
         
     }) 
 
-    /* START SEZIONE PREFERITI */
-    // FavoriteList = [];
-    let FavoriteList = data.filter(function (el) {
-        return el.favorite === true;
-    });
-
-    console.log(FavoriteList);
-    // document.getElementById('Preferiti').innerHTML = FavoriteList.join('');
-    // renderContacts(FavoriteList);
-
-    
 }
 
 
@@ -84,24 +120,24 @@ document.getElementById("defaultOpen").click();
 
 /* MOSTRA SEZIONI INTERESSATE*/
 function openSection(event, nomeSezione) {
-
+    console.log('ciao')
     let i, tabcontent, tablinks;
 
     //nascondi tutti gli elementi con class tabcontent
     tabcontent = document.getElementsByClassName('tabcontent');
     for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].getElementsByClassName.display = 'none';
+        tabcontent[i].style.display = 'none';
     }
 
     //rimuovo la classe active
     tablinks = document.getElementsByClassName('tablinks');
     for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace('active', '')
+        tablinks[i].className = tablinks[i].className.replace(' active ', '')
     }
 
     //aggiungi classe active alla sezione mostrata dopo aver cliccato
     document.getElementById(nomeSezione).style.display = "block";
-    event.currentTarget.className += "active";
+    event.currentTarget.className += " active ";
 
 }
 /* END MOSTRA SEZIONI INTERESSATE*/
