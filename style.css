@@ -123,8 +123,8 @@ div.search_input {
     /* position: absolute; */
     /* display: inline-block; */
     /* top: 20px; */
-    background-image: url('/img/circle-user-solid.svg');
-    background-repeat: no-repeat;
+    /* background-image: url('/img/circle-user-solid.svg');
+    background-repeat: no-repeat; */
     /* background-size: ; */
     object-fit: cover;
 }
@@ -185,7 +185,7 @@ div.search_input {
 /* M E N U */
 .tab {
     position: fixed;
-    /*top: 689px; */
+    top: 689px;
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 5px 1px #aeaeae;
     width: 100%;

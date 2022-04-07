@@ -10,7 +10,8 @@ const renderContacts = (data) => {
         <div id="${item.id}" class="card_contact normal">
             <div class="credenziali">
                 <div class="img_container">
-                    <img class="item_img">
+                    
+                    <i class="item_img fa-solid fa-circle-user fa-4x"></i>
                 </div>
                 <div class="user_container">
                     <h4 class="item_name">${item.name}</h4> <p class="item_username">${item.username}</p>
