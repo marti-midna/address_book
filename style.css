@@ -161,6 +161,7 @@ div.search_input {
 }
 .item_number {
     color: #4f4f4f;
+    font-weight: bold;
 
 }
 .separate{
