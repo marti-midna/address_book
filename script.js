@@ -94,7 +94,12 @@ const renderContacts = (data) => {
         const newData = data.map((element) => {
             if(element.id === index+1){
                return {...element, favorite: !element.favorite}; 
-            } else {
+            }
+            //  } if (element.favorite === false){
+            //      return ''
+            //  }
+
+            else {
                 return element
             }
             
@@ -103,6 +108,25 @@ const renderContacts = (data) => {
         })
 
     }) 
+
+    //eliminazione da preferiti
+    // document.querySelectorAll('.add').forEach((element, index) => {
+    //     element.addEventListener('click', () =>{
+
+        
+    //     const addio = data.map((element) => {
+    //         if(element.id === index+1 && element.favorite === false){
+    //            return ''
+    //         }
+    //         // else {
+    //         //     return element
+    //         // }
+            
+    //     });
+    //     renderContacts(addio);
+    //     })
+
+    // }) 
 
 }
 
