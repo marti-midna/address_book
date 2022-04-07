@@ -12,15 +12,28 @@
     height: 100vh;
 }
 
-header {
-    
-}
-
 h1 {
     
     padding: 10px;
     font-size: 1.4rem;
     text-align: center;
+    
+}
+
+.headings_container {
+    display: flex;
+    justify-content: start;
+    padding: 10px 0px;
+}
+
+h3 {
+    padding-left: 1rem ;
+    font-size: 0.8rem;
+    
+}
+
+h3.star {
+    color: rgb(130, 130, 130);
     
 }
 
@@ -55,23 +68,8 @@ div.search_input {
 }
 
 /* - - - - - - - - */
+/* - - - -CONTAINERS - - - - */
 
-.headings_container {
-    display: flex;
-    justify-content: start;
-    padding: 10px 0px;
-}
-
-h3 {
-    padding-left: 1rem ;
-    font-size: 0.8rem;
-    
-}
-
-h3.star {
-    color: rgb(130, 130, 130);
-    
-}
 
 .contacts_container {
     border-radius: 1rem;  
@@ -98,7 +96,7 @@ h3.star {
     to {opacity: 1;}
 }
 
-
+/*---------END CONTAINERS----------*/
 
 /* C A R D */
 .card_contact{
@@ -239,8 +237,49 @@ h3.star {
 
 /* - - - - - -*/
 
+/* - - -NESSUN RISULTATO - - -*/
+
 .nulla {
     color: rgba(109, 109, 109, 0.735);
     text-align: center;
     padding-top: 2rem;
 }
+
+/* - - -NESSUN RISULTATO - - -*/
+
+/* - - -SEZIONE AGGIUNGI - - -*/
+
+.inputadduser {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.inputadduser input[type="text"] {
+    all: unset;
+    font-size: 0.8rem;
+    border-bottom: 1.5px solid rgb(58, 118, 163);
+    background-color: white;
+    font-weight: 400;
+    width: 40%;
+    
+}
+/* .inputadduser input[type="text"]:focus {
+    all: unset;
+     border-bottom: rgb(70, 158, 226); 
+} */
+
+.inputadduser button {
+ all: unset;
+ padding-top: 1rem;
+}
+
+.labelform {
+    font-weight: 700;
+    font-size: 80%;
+}
+
+/* - - -END SEZIONE AGGIUNGI - - -*/

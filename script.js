@@ -86,6 +86,7 @@ const renderContacts = (data) => {
         
     }
     document.getElementById('Preferiti').innerHTML = favorites.join('');
+    
     document.querySelectorAll('.add').forEach((element, index) => {
         element.addEventListener('click', () =>{
 
@@ -100,10 +101,24 @@ const renderContacts = (data) => {
         });
         renderContacts(newData);
         })
-        
+
     }) 
 
 }
+
+document.getElementById('Aggiungi')
+
+
+
+
+
+
+
+
+
+
+
+
 
 //sezione contatti aperta di default
 document.getElementById("defaultOpen").click();
