@@ -84,12 +84,12 @@ div.search_input {
 
 
 .contacts_container {
-    border-radius: 1rem;  
+    border-radius: 1rem;
     background-color: white;
-    height: 110%;
+    height: 100%;
     width: 100%;
     overflow: auto;
-    margin-top: 133px;
+    padding-top: 133px;
 }
 
 .contacts_container .contatti{
