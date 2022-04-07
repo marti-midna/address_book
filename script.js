@@ -2,7 +2,7 @@
 let contacts = [];
 let favorites = [];
 const renderContacts = (data) => {
-        
+    console.log(data);
         if(data.length > 0) {
         contacts = data.map((item, index) => 
         {   
@@ -13,7 +13,7 @@ const renderContacts = (data) => {
                 <img  class="item_img" src='https://i.postimg.cc/xTHQwDdd/circle-user-solid.png' border='0' alt='circle-user-solid'/>
                 </div>
                 <div class="user_container">
-                    <h4 class="item_name">${item.name}</h4> <p class="item_username">${item.username}</p>
+                    <h4 class="item_name">${item.name}</h4> <p class="item_username">${item.username} - ${item.email}</p>
                     <p class="item_number">${item.phone}</p>
                 </div>
             </div>
@@ -26,6 +26,7 @@ const renderContacts = (data) => {
         <div class="separate"></div>
         `;
             return str
+            
         }
     );
     } else {
@@ -39,6 +40,7 @@ const renderContacts = (data) => {
         ]
         
     }
+    
     document.querySelector('.contact_list').innerHTML = contacts.join('');
 
     /* START SEZIONE PREFERITI */
