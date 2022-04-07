@@ -118,15 +118,15 @@ div.search_input {
 
 .item_img {
     width: 100%;
-    height: 100%;
+    /* height: 76%; */
     border-radius: 4rem;
     /* position: absolute; */
     /* display: inline-block; */
     /* top: 20px; */
-    /* background-image: url('/img/circle-user-solid.svg');
-    background-repeat: no-repeat; */
+    /* background-image: url('https://postimg.cc/8j1xvYM8'); */
+    /* background-repeat: no-repeat; */
     /* background-size: ; */
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
 .item_name {
@@ -161,7 +161,6 @@ div.search_input {
 }
 .item_number {
     color: #4f4f4f;
-    font-weight: bold;
 
 }
 .separate{
@@ -185,8 +184,8 @@ div.search_input {
 
 /* M E N U */
 .tab {
-    position: fixed;
-    top: 689px;
+    /* position: fixed;
+    top: 689px; */
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 5px 1px #aeaeae;
     width: 100%;
