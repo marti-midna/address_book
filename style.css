@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+body {
+    background: rgb(243, 243, 243);
+}
+
+header {
+    height: 15%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background: rgb(243, 243, 243);
+
+}
 .container {
     background-color: #f1f1f1;
     font-family: 'Poppins', sans-serif;
@@ -74,9 +86,10 @@ div.search_input {
 .contacts_container {
     border-radius: 1rem;  
     background-color: white;
-    height: 70%;
+    height: 110%;
     width: 100%;
     overflow: auto;
+    margin-top: 133px;
 }
 
 .contacts_container .contatti{
@@ -104,6 +117,7 @@ div.search_input {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding-top: 10px;
 }
 
 .credenziali {
@@ -113,6 +127,7 @@ div.search_input {
 
 .img_container {
     width: 10%;
+    padding-left: 1rem;
 }
 
 
@@ -161,6 +176,7 @@ div.search_input {
 }
 .item_number {
     color: #4f4f4f;
+    font-weight: 600;
 
 }
 .separate{
@@ -184,8 +200,8 @@ div.search_input {
 
 /* M E N U */
 .tab {
-    /* position: fixed;
-    top: 689px; */
+    position: fixed;
+    top: 91%;
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 5px 1px #aeaeae;
     width: 100%;
@@ -261,6 +277,9 @@ div.search_input {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    gap: 16px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
 }
 .inputadduser input[type="text"] {
@@ -294,3 +313,13 @@ div.search_input {
 }
 
 /* - - -END SEZIONE AGGIUNGI - - -*/
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+
+        .item_name {
+            font-size: 15px;        }
+
+     }

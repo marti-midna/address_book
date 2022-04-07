@@ -56,7 +56,7 @@ const renderContacts = (data) => {
         <div id="${item.id}" class="card_contact normal">
             <div class="credenziali">
                 <div class="img_container">
-                    <img class="item_img">
+                    <img  class="item_img" src='https://i.postimg.cc/xTHQwDdd/circle-user-solid.png' border='0' alt='circle-user-solid'/>
                 </div>
                 <div class="user_container">
                     <h4 class="item_name">${item.name}</h4> <p class="item_username">${item.username}</p>
