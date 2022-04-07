@@ -184,8 +184,8 @@ div.search_input {
 
 /* M E N U */
 .tab {
-    /* position: fixed;
-    top: 689px; */
+    position: fixed;
+    /*top: 689px; */
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 5px 1px #aeaeae;
     width: 100%;
