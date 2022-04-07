@@ -257,21 +257,21 @@ div.search_input {
     align-items: center;
     gap: 10px;
 }
+.dati_input {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 
+}
 .inputadduser input[type="text"] {
     all: unset;
-    font-size: 0.8rem;
+    font-size: 1rem;
     border-bottom: 1.5px solid rgb(58, 118, 163);
     background-color: white;
     font-weight: 400;
-    width: 40%;
     
 }
-/* .inputadduser input[type="text"]:focus {
-    all: unset;
-     border-bottom: rgb(70, 158, 226); 
-} */
-
+.inputadduser input[type="text"]:focus {border: rgb(70, 158, 226);}
 .inputadduser button {
  all: unset;
  padding-top: 1rem;
@@ -279,7 +279,18 @@ div.search_input {
 
 .labelform {
     font-weight: 700;
-    font-size: 80%;
+    font-size: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+.submit {
+    display: flex;
+    justify-content: center;
+}
+.submit_btn {
+    all: unset;
+    
 }
 
 /* - - -END SEZIONE AGGIUNGI - - -*/
