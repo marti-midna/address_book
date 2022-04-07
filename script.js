@@ -48,8 +48,6 @@ const renderContacts = (data) => {
     });
 
     console.log(favorites);
-    // document.getElementById('Preferiti').innerHTML = FavoriteList.join('');
-    // renderContacts(FavoriteList);
 
     if(favorites.length > 0) {
         favorites = favorites.map((item, index) => 
@@ -107,20 +105,12 @@ const renderContacts = (data) => {
 
 }
 
-
-
-
-
-
-
-
 //sezione contatti aperta di default
 document.getElementById("defaultOpen").click();
 
 
 /* MOSTRA SEZIONI INTERESSATE*/
 function openSection(event, nomeSezione) {
-    console.log('ciao')
     let i, tabcontent, tablinks;
 
     //nascondi tutti gli elementi con class tabcontent
@@ -138,6 +128,8 @@ function openSection(event, nomeSezione) {
     //aggiungi classe active alla sezione mostrata dopo aver cliccato
     document.getElementById(nomeSezione).style.display = "block";
     event.currentTarget.className += " active ";
+    
+
 
 }
 /* END MOSTRA SEZIONI INTERESSATE*/
