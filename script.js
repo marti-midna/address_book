@@ -89,20 +89,20 @@ const renderContacts = (data) => {
     }
     document.getElementById('Preferiti').innerHTML = favorites.join('');
     
-    document.querySelectorAll('.add').forEach((element, index) => {
-        element.addEventListener('click', () =>{
-
+    document.querySelectorAll('.add').forEach((stellina, index) => {
+        stellina.addEventListener('click', () =>{
+            console.log(stellina)
         
-        const newData = data.map((element) => {
-            if(element.id === index+1){
-               return {...element, favorite: !element.favorite}; 
+        const newData = data.map((contatto) => {
+            console.log(contatto.id, stellina.id);
+            if(contatto.id === parseInt(stellina.id)){
+                
+               return {...contatto, favorite: !contatto.favorite}; 
             }
-            //  } if (element.favorite === false){
-            //      return ''
-            //  }
+            
 
             else {
-                return element
+                return contatto
             }
             
         });
@@ -214,17 +214,31 @@ getData().then(data =>
                 ){
                 return element
             } 
-            
+       
     });
-
+    console.log(filteredList);
     renderContacts(filteredList);
     
     
-    
+    // document.querySelectorAll('.add').forEach((element, index) => {
+    //     element.addEventListener('click', () =>{
 
+        
+    //     const reFilt = data.map((element) => {
+    //         if(element.id === index+1){
+    //            return {...element, favorite: !element.favorite}; 
+    //         }
+    //         //  } if (element.favorite === false){
+    //         //      return ''
+    //         //  }
 
-
-
+    //         else {
+    //             return element.favorite === true;
+    //         }
+            
+    //     });
+    //     });
+    // })
 
 
 }));
