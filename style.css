@@ -128,11 +128,15 @@ div.search_input {
 .img_container {
     width: 10%;
     padding-left: 1rem;
+    padding-top: 0.2rem;
+    min-width: 60px;
 }
 
 
 .item_img {
     width: 100%;
+    min-width: 40px;
+    max-width: 50px;
     /* height: 76%; */
     border-radius: 4rem;
     /* position: absolute; */
