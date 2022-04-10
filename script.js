@@ -110,38 +110,7 @@ const renderContacts = (data) => {
         })
 
     }) 
-
-    //eliminazione da preferiti
-    // document.querySelectorAll('.add').forEach((element, index) => {
-    //     element.addEventListener('click', () =>{
-
-        
-    //     const addio = data.map((element) => {
-    //         if(element.id === index+1 && element.favorite === false){
-    //            return ''
-    //         }
-    //         // else {
-    //         //     return element
-    //         // }
-            
-    //     });
-    //     renderContacts(addio);
-    //     })
-
-    // }) 
-
 }
-
-
-
-
-
-
-
-
-
-
-
 
 //sezione contatti aperta di default
 document.getElementById("defaultOpen").click();
@@ -180,7 +149,7 @@ function openSection(event, nomeSezione) {
 
 
 
-
+//------------------------------------------------------------------------------
 //chiamata tramite API
 
 const URL = "https://jsonplaceholder.typicode.com/users";
@@ -218,28 +187,35 @@ getData().then(data =>
     });
     console.log(filteredList);
     renderContacts(filteredList);
-    
-    
-    // document.querySelectorAll('.add').forEach((element, index) => {
-    //     element.addEventListener('click', () =>{
-
-        
-    //     const reFilt = data.map((element) => {
-    //         if(element.id === index+1){
-    //            return {...element, favorite: !element.favorite}; 
-    //         }
-    //         //  } if (element.favorite === false){
-    //         //      return ''
-    //         //  }
-
-    //         else {
-    //             return element.favorite === true;
-    //         }
-            
-    //     });
-    //     });
-    // })
-
-
 }));
+//------------------------------------------------------------------------------
 
+/* aggiunta contatto 
+
+1. definisco le input da cui devo prendere i miei dati e il bottone su cui cliccare
+2. al click aggiungo il contatto, definisco il punto in cui cliccare
+e aggiungo l'evento e creo la mia funzione
+3. faccio una chiamata fetch-post al server tramite api specificando le costanti.VALUE da prelevarsi */
+
+
+const nameNewUser = document.getElementById("input_name");
+const mailNewUser = document.getElementById("input_mail");
+const numberNewUser = document.getElementById("input_number");
+const submitNewUser = document.getElementsByClassName("submit_btn");
+
+submitNewUser[0].addEventListener('click', () => {
+    
+    fetch(URL, {
+        method : 'POST',
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            name: nameNewUser.value,
+            email: mailNewUser.value,
+            phone: numberNewUser.value,
+        })
+    }).then( resp => {
+        getData();
+    })
+})
