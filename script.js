@@ -17,7 +17,7 @@ const renderContacts = (data) => {
                     <p class="item_number">${item.phone}</p>
                 </div>
             </div>
-
+ 
             <div class="addstar">
                 <i class="fa-regular fa-star add ${item.favorite ? 'fa-solid' : ''}" id="${item.id}"></i>
             </div> 
